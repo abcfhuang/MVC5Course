@@ -36,7 +36,11 @@ namespace MVC5Course.Controllers
 
             var client = repo.All().Take(10);
 
-            return View(client.ToList());
+            ViewData.Model = client.ToList();
+
+            return View();
+
+            //return View(client.ToList());
         }
 
         // GET: Clients/Details/5

@@ -1,0 +1,104 @@
+﻿@model MVC5Course.Models.Simple1ViewModel
+
+@{
+    ViewBag.Title = "Complex2";
+}
+
+<h2>Complex2</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Complex2</h4>
+        <hr />
+        <h2>Item1</h2>
+
+        <hr />
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="item1.Username">Username</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="Username 欄位是必要項。" id="item1..Username" name="item1.Username" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="Username" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="item1.Password">Password</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="Password 欄位是必要項。" id="item1.Password" name="item1.Password" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="item1.ConfirmPassword">ConfirmPassword</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-equalto="&#39;ConfirmPassword&#39; 和 &#39;Password&#39; 不相符。" data-val-equalto-other="*.Password" data-val-required="ConfirmPassword 欄位是必要項。" id="item1.ConfirmPassword" name="item1.ConfirmPassword" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="item1.Age">Age</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-number="欄位 Age 必須是數字。" data-val-required="Age 欄位是必要項。" id="item1.Age" name="item1.Age" type="number" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="Age" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+
+        <hr />
+        <h2>Item2</h2>
+
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="item2.Username">Username</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="Username 欄位是必要項。" id="item2.Username" name="item2.Username" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="Username" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="item2.Password">Password</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="Password 欄位是必要項。" id="item2.Password" name="item2.Password" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="item2.ConfirmPassword">ConfirmPassword</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-equalto="&#39;ConfirmPassword&#39; 和 &#39;Password&#39; 不相符。" data-val-equalto-other="*.Password" data-val-required="ConfirmPassword 欄位是必要項。" id="item2.ConfirmPassword" name="item2.ConfirmPassword" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="item2.Age">Age</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-number="欄位 Age 必須是數字。" data-val-required="Age 欄位是必要項。" id="item2.Age" name="item2.Age" type="number" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="Age" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+       </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

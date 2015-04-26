@@ -5,3 +5,15 @@
 
 <h2>View1</h2>
 
+@Ajax.ActionLink("Run JS", "JavaScript1", new AjaxOptions() { })
+
+<input type="button" onclick="getdata();" value="讀取 Products 的 JSON 資料">
+<script>
+    function getdata() {
+        $.getJSON("/AR/Json1", null, new function (data) {
+            //將資料吐出來
+            console.log(data);
+        });
+    }
+</script>
+

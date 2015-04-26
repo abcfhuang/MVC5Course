@@ -16,6 +16,18 @@ namespace MVC5Course
             //routes.IgnoreRoute("Base/{action}");
 
             routes.MapRoute(
+                name: "DefaultDot",
+                url: "{controller}.{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "DefaultDash",
+                url: "Docs/{controller}-{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
