@@ -11,7 +11,7 @@ using MVC5Course.ActionFilters;
 
 namespace MVC5Course.Controllers
 {
-    [ShareData]
+    [Logger]
     public class ClientsController : BaseController
     {
         //private FabricsEntities db = new FabricsEntities();

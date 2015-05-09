@@ -190,6 +190,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFilters\LoggerAttribute.cs" />
     <Compile Include="ActionFilters\ShareDataAttribute.cs" />
     <Compile Include="App_GlobalResources\Products.Designer.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />

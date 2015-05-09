@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace MVC5Course.Controllers
 {
+    [Logger]
     public class HomeController : Controller
     {
         public ActionResult Index()

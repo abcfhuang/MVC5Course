@@ -12,15 +12,7 @@ namespace MVC5Course.ActionFilters
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             filterContext.Controller.ViewBag.Message = "!! Your application description page.";
-            Trace.TraceInformation("Logger Begin");
-
             base.OnActionExecuting(filterContext);
-        }
-
-        public override void OnResultExecuted(ResultExecutedContext filterContext)
-        {
-            Trace.TraceInformation("Logger End");
-            base.OnResultExecuted(filterContext);
         }
 
     }
