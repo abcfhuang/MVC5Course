@@ -32,13 +32,20 @@ namespace MVC5Course.Controllers
         }
 
         // GET: Clients
-        public ActionResult Index()
+        public ActionResult Index(string city)
         {
             //var client = db.Client.Include(c => c.Occupation).Take(10);
 
-            var client = repo.All().Take(10);
+            //var client = repo.All().Take(10);
 
-            ViewData.Model = client.ToList();
+             var client =repo.SearchByCity(city);
+
+            ViewData.Model = client .ToList();
+
+            //只搜尋city欄位且city出來
+            var cityList = repo.All().Select(p => new { p.City }).Distinct().ToList();
+
+            ViewBag.Cities = new SelectList(cityList, "City", "City", city);
 
             return View();
 
@@ -60,6 +67,9 @@ namespace MVC5Course.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.OrderList = client.Order.ToList();
+
             return View(client);
         }
 

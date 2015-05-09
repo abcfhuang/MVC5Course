@@ -1,4 +1,5 @@
-﻿@model IEnumerable<MVC5Course.Models.Client>
+﻿@*@model IEnumerable<MVC5Course.Models.Client>把命名空間弄到views底下的web.config裡面去了*@
+@model IEnumerable<Client>
 
 @{
     ViewBag.Title = "Index";
@@ -8,6 +9,10 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("新增資料", "Create", "Client", null, new { @class = "item" })
+    @*<a href="@Url.Action("Create", "Clients")"></a>*@
+
+    @Html.DropDownList("city", ViewBag.Cities as SelectList, "--請選擇城市--", new { onchange = "location.search = '?city=' + $(this).val();" })
 </p>
 <table class="table">
     <tr>
@@ -19,6 +24,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Gender)
@@ -39,6 +47,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Gender)

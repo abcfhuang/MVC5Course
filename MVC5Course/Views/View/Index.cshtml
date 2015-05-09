@@ -1,0 +1,30 @@
+﻿Test
+
+@if (DateTime.Now.Year != 2015)
+{
+    @:今年
+}
+else
+{
+    @:非今年
+}
+
+<br />
+@foreach (int i in ViewBag.IntArray)
+{
+    @i
+}
+
+<br />
+@foreach (int i in ViewBag.IntArray)
+{
+    @(i + " ")
+}
+
+<br />
+<ul>
+@foreach (int i in ViewBag.IntArray)
+{
+  <li>@i</li>
+}
+</ul>

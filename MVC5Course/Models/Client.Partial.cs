@@ -35,7 +35,8 @@ namespace MVC5Course.Models
         
         [StringLength(20, ErrorMessage="欄位長度不得大於 20 個字元")]
         public string TelephoneNumber { get; set; }
-        
+
+        [UIHint("GoogleMaps")]
         [StringLength(100, ErrorMessage="欄位長度不得大於 100 個字元")]
         public string Street1 { get; set; }
         
@@ -54,6 +55,7 @@ namespace MVC5Course.Models
         public bool IsDeleted { get; set; }
     
         public virtual Occupation Occupation { get; set; }
+         [UIHint("OrderList")]
         public virtual ICollection<Order> Order { get; set; }
     }
 }
