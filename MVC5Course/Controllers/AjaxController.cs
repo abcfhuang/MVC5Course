@@ -14,10 +14,14 @@ namespace MVC5Course.Controllers
             return View();
         }
 
-
         public string GetTime()
         {
             return DateTime.Now.ToString();
+        }
+
+        public ActionResult GetJson()
+        {
+            return Json(new { result = "OK" });
         }
     }
 }

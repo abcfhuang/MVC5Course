@@ -607,7 +607,7 @@
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\OrderList.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\GoogleMaps.cshtml" />
-    <Content Include="Views\aJAX\Index.cshtml" />
+    <Content Include="Views\Ajax\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

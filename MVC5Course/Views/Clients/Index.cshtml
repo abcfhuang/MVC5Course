@@ -59,10 +59,16 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ClientId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ClientId }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.ClientId }) |*@
+            @Ajax.ActionLink("Details", "Details", new { id = item.ClientId }, new AjaxOptions { UpdateTargetId = "detail", AllowCache = false, Confirm = "你確定要載入嗎？", HttpMethod = "POST", InsertionMode = InsertionMode.InsertAfter, LoadingElementId = "loading" }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ClientId })
         </td>
     </tr>
 }
 
 </table>
+
+<div id="loading" style="display:none">
+    <img src="http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/36-0.gif" />
+</div>
+<div id="detail"></div>
