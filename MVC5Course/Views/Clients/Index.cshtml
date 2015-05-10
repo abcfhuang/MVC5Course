@@ -1,5 +1,7 @@
 ﻿@*@model IEnumerable<MVC5Course.Models.Client>把命名空間弄到views底下的web.config裡面去了*@
 @model IEnumerable<Client>
+@using PagedList
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "Index";
@@ -68,6 +70,12 @@
 
 </table>
 
+@{
+    var data = Model as PagedList<Client>;
+}
+@Html.PagedListPager(data, (p) => Url.Action("Index", new { pageNo = p }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing("#Main"))
+
+<hr />
 <div id="loading" style="display:none">
     <img src="http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/36-0.gif" />
 </div>

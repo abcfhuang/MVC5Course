@@ -8,7 +8,7 @@ namespace MVC5Course.Models
 	{
         public override IQueryable<Client> All()
         {
-            return base.All().Where(p => p.IsDeleted == false);
+            return base.All().Where(p => p.IsDeleted == false).OrderBy(p => p.ClientId);
         }
 
         public IQueryable<Client> SearchByGender(string gender)

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MVC5Course.Models;
 using MVC5Course.ActionFilters;
+using PagedList;
 
 namespace MVC5Course.Controllers
 {
@@ -32,7 +33,7 @@ namespace MVC5Course.Controllers
         }
 
         // GET: Clients
-        public ActionResult Index(string city)
+        public ActionResult Index(string city, int pageNo = 1)
         {
             //var client = db.Client.Include(c => c.Occupation).Take(10);
 
@@ -40,14 +41,21 @@ namespace MVC5Course.Controllers
 
              var client =repo.SearchByCity(city);
 
-            ViewData.Model = client .ToList();
+             ViewData.Model = client.ToPagedList(pageNo, 10);
 
             //只搜尋city欄位且city出來
             var cityList = repo.All().Select(p => new { p.City }).Distinct().ToList();
 
             ViewBag.Cities = new SelectList(cityList, "City", "City", city);
 
-            return View();
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView();
+            }
+            else
+            {
+                return View();
+            }
 
             //return View(client.ToList());
         }
