@@ -48,14 +48,7 @@ namespace MVC5Course.Controllers
 
             ViewBag.Cities = new SelectList(cityList, "City", "City", city);
 
-            if (Request.IsAjaxRequest())
-            {
-                return PartialView();
-            }
-            else
-            {
-                return View();
-            }
+            return View();
 
             //return View(client.ToList());
         }
