@@ -14,6 +14,11 @@ if(IsPartialView) {
 #>
 
 @{
+	if (IsAjax)
+    {
+        Layout = "";
+    }
+
     ViewBag.Title = "<#= ViewName#>";
 <#
 if (!String.IsNullOrEmpty(LayoutPageFile)) {
